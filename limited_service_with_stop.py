@@ -4,7 +4,7 @@ import json
 import sys
 
 count = 0
-
+port = 8008
 class WebhookHandler(http.server.BaseHTTPRequestHandler):
     def do_POST(self):
         global count
@@ -22,6 +22,6 @@ class WebhookHandler(http.server.BaseHTTPRequestHandler):
             sys.exit()
 
 if __name__ == '__main__':
-    server = socketserver.TCPServer(('', 8000), WebhookHandler)
-    print('Server started. Listening on port 8000...')
+    server = socketserver.TCPServer(('', port), WebhookHandler)
+    print(f'Server started. Listening on port {port}...')
     server.serve_forever()
