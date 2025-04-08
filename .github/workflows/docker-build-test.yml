@@ -37,7 +37,7 @@ jobs:
     
     - name: Run tests
       run: |
-        python test_server.py
+        python test_service.py
         TEST_RESULT=$?
         kill $(cat server.pid) || true
         exit $TEST_RESULT
