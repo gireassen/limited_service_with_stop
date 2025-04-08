@@ -32,3 +32,25 @@ python3 test_service.py
 curl -X POST http://localhost:8008
 ```
 
+### Запуск с Docker/Podman
+
+```bash
+# docker
+docker build -t limited_service .
+docker run -p 8008:8008 limited_service
+
+# podman
+podman build -t limited_service .
+podman run -p 8008:8008 limited_service
+```
+
+### Запуск c Docker/Podman с DockerHub
+```bash
+# docker
+docker run -p 8008:8008 gias123/limited_service:latest
+
+# podman
+podman run -p 8008:8008 docker.io/gias123/limited_service:latest
+```
+
+Приложение будет доступно по адресу: http://localhost:8008
