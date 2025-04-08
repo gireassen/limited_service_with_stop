@@ -79,7 +79,7 @@ jobs:
         run: |
           docker run -d -p 8008:8008 --name ${{ env.IMAGE_NAME }} ${{ env.DOCKERHUB_REPO }}:${{ github.sha }}
           sleep 2
-          python test_server.py --url http://localhost:8008
+          python test_service.py --url http://localhost:8008
           docker logs ${{ env.IMAGE_NAME }}
 
       - name: Cleanup
