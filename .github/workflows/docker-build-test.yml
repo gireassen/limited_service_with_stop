@@ -31,7 +31,7 @@ jobs:
     
     - name: Start server in background
       run: |
-        python limited_service_with_stop.py &
+        python server.py &
         echo $! > server.pid
         sleep 2  # Wait for server to start
     
