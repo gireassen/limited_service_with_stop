@@ -13,12 +13,12 @@ WORKDIR /app
 
 # Копируем только необходимые файлы
 COPY --from=builder /root/.local /root/.local
-COPY limited_service_with_stop.py .
+COPY server.py .
 
 # Убедимся, что скрипты в PATH
 ENV PATH=/root/.local/bin:$PATH
 
-CMD ["python", "limited_service_with_stop.py"]
+CMD ["python", "server.py"]
 
 # Использование Alpine вместо slim (образ в 5x меньше)
 # Многоэтапная сборка уменьшает итоговый размер
